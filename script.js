@@ -22,7 +22,7 @@ document.addEventListener('keydown', (e) => {
             e.remove();
         });
         img.style.display = 'block';
-        BiquadFilterNode.style.top = '40vh';
+        bird.style.top = '40vh';
         game_state = 'Play';
         message.innerHTML = ' ';
         score_title.innerHTML = '0';
@@ -45,27 +45,28 @@ function play() {
                 element.remove();
 
             } else {
-                if (bird_props.left < pipe_sprite_props.left + pipe_sprite_props.
-                    width && bird_props.left + bird_props.width > pipe_sprite_props.
-                        left && bird_props.top < pipe_sprite_props.top +
-                        pipe_sprite_props.height && bird_props.top + bird_props.height
-                    > pipe_sprite_props.top) {
+                if (bird_props.left < pipe_sprite_props.left + pipe_sprite_props.width && 
+                    bird_props.left + bird_props.width > pipe_sprite_props.left && 
+                    bird_props.top < pipe_sprite_props.top + pipe_sprite_props.height && 
+                    bird_props.top + bird_props.height > pipe_sprite_props.top) {
                     game_state = 'End';
-                    message.innerHTML = 'Game Over'.fontcolor('red') +
-                        '<br>Press Enter to Restart';
+                    message.innerHTML = 'Game Over'.fontcolor('red') + '<br>Press Enter to Restart';
                     message.classList.add('messageStyle');
                     img.style.display = 'none';
+                    sound_die.play();  // Sound für Game Over
                     return;
-                } else {
+                }
+                 else {
                     if (pipe_sprite_props.right < bird_props.left &&
                         pipe_sprite_props.right + move_speed >= bird_props.left &&
                         element.increase_score == '1') {
-                        score_val.innerHTML = + score_val.innerHTML + 1;
+                            score_val.innerHTML = parseInt(score_val.innerHTML) + 1;
+
                     }
                     element.style.left = pipe_sprite_props.left - move_speed +
                         'px';
-                }
-            })
+                }}
+            });
         requestAnimationFrame(move);
     }
     requestAnimationFrame(move);
@@ -121,7 +122,6 @@ function play() {
 
             document.body.appendChild(pipe_sprite_inv);
             let pipe_sprite = document.createElement('div');
-            let pipe_sprite_className = 'pipe_sprite';
             pipe_sprite.style.top = pipe_posi + pipe_gap + 'vh';
             pipe_sprite.style.left = '100vw';
             pipe_sprite.increase_score = '1';
