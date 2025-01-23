@@ -52,7 +52,7 @@ function play() {
                    
 
                     game_state = 'End';
-                    message.innerHTML = 'Game Over'.fontcolor('red') + '<br>Press Enter to Restart';
+                    message.innerHTML = 'Game Over'+ '<br>Press Enter to Restart';
                     message.classList.add('messageStyle');
                     img.style.display = 'none';
                     sound_die.play();
@@ -83,20 +83,24 @@ function play() {
         //steuerig vom vogell
         document.addEventListener('keydown', (e) => {
             if ((e.key == ' ' || e.key == 'ArrowUp') && game_state == 'Play') {
-                img.src = 'images/Bird-2.png'; 
+                img.src = 'images/cat.png'; 
                 bird_dy = -7.6; 
+
             }
         });
     
         document.addEventListener('keyup', (e) => {
             if (e.key == ' ' || e.key == 'ArrowUp') {
-                img.src = 'images/Bird.png'; // 
+                img.src = 'images/cat.png'; // 
             }
         });
+        
     
         if (bird_props.top <= 0 || bird_props.bottom >= background.bottom) {
             game_state = 'End';
-            message.style.left = '28vw';
+            message
+            
+             .style.left = '28vw';
             window.location.reload();
             message.classList.remove('messageStyle');
             return;

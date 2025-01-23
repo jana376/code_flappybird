@@ -7,13 +7,21 @@
 .background {
 	height: 100vh; /* gleich 1% der bildschrim beitre*/
 	width: 100vw; /* w und h wird untershcieden wie Width und Heigt*/
-	background: url('images/background-img.png') no-repeat center center fixed;
+	background: url('images/background_unicorn.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover; /* vendor prefixes, weg soo ältere browser dies das und damit kompatibler esh */
     -o-background-size: cover;
     background-size: cover;
 }
 
+#bird-1{
+	height: 100px;
+	width: 130px;
+	position: fixed;
+	top: 50vh;
+	left: 40vw;
+	z-index: 100;
+}
 .bird{
 	height: 100px;
 	width: 130px;
@@ -30,7 +38,7 @@
 	left: 100vw;
 	height: 70vh;
 	width: 6vw;
-	background: radial-gradient(lightgreen 50%, green);
+	background: radial-gradient(rgb(252, 137, 236) 50%, rgb(229, 221, 238));
 	border: 5px solid black;
 }
 
@@ -42,13 +50,15 @@
 	left: 50%;
 	transform: translate(-50%,-50%);
 	text-align: center;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .messageStyle{
-	background: white;
+	background: rgb(255, 255, 255);
 	padding: 30px;
 	box-shadow: (0,0,0,0.24) 0px 3px 8px;
 	border-radius: 5%;
+	
 }
 
 .score{
@@ -65,11 +75,7 @@ left: 0;
 margin: 10px;
 }
 
-.score_val{
-	color: gold;
-	font-weight: bold;
 
-}
 
 @media only screen and (max-width: 1080px){
 	.message{
