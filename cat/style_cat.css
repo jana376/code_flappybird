@@ -38,14 +38,14 @@
 	left: 100vw;
 	height: 70vh;
 	width: 6vw;
-	background: radial-gradient(rgba(116, 227, 255, 0.342) 20%, rgba(243, 55, 243, 0.575));
-	border: 5px solid black;
+	background: radial-gradient(rgba(116, 227, 255, 0.815) 20%, rgba(243, 55, 243, 0.877));
+	border: 5px solid rgba(0, 0, 0, 0.685);
 }
 
 .message{
 	position: absolute;
 	z-index: 10;
-	color: black;
+	color: rgb(252, 249, 249);
 	top: 30%;
 	left: 50%;
 	transform: translate(-50%,-50%);
@@ -54,7 +54,7 @@
 }
 
 .messageStyle{
-	background: rgb(255, 255, 255);
+	background: rgba(76, 53, 160, 0.705);
 	padding: 30px;
 	box-shadow: (0,0,0,0.24) 0px 3px 8px;
 	border-radius: 5%;

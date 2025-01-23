@@ -83,7 +83,7 @@ function play() {
         //steuerig vom vogell
         document.addEventListener('keydown', (e) => {
             if ((e.key == ' ' || e.key == 'ArrowUp') && game_state == 'Play') {
-                img.src = 'images/unicorn-2.png'; 
+                img.src = 'images/toast.png'; 
                 bird_dy = -7.6; 
 
             }
@@ -91,7 +91,7 @@ function play() {
             
         document.addEventListener('keyup', (e) => {
             if (e.key == ' ' || e.key == 'ArrowUp') {
-                img.src = 'images/unicorn.png'; // 
+                img.src = 'images/toast.png'; // 
             }
         });
         
